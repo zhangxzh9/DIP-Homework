@@ -56,7 +56,8 @@ $$
 
 
 
-## 2.2 Histogram Equalization 
+## 2.2 Histogram Equalization
+
 ### 2.2.1
 原图的直方图如图2所示。
 <div align=center>
