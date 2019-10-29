@@ -1,55 +1,27 @@
 # Exercises
 
-## 1.1 
+## 1.1
 
 $$
-DFT[f(x,y)]=DFT[cos(2πu_0x+2πv_0y)]
+\begin{aligned}
+DFT[f(x,y)] &= DFT[cos(2πu_0x+2πv_0y)] \\
+&=DFT[\frac{1}{2}(e^{i2π(u_0x+v_0y)}+e^{-i2π(u_0x+v_0y)})]\\
+&=\frac{1}{2}(DFT[(e^{i2π(u_0x+v_0y)}]+DFT[e^{-i2π(u_0x+v_0y)})])\\
+&=\frac{1}{2}(DFT[1 * e^{2πi(\frac{u_0xM}{M}+\frac{v_0yN}{N})}]+DFT[1 * e^{-2πi(\frac{u_0xM}{M}+\frac{v_0yN}{N})})])\\
+\end{aligned}
 $$
+又根据离散傅里叶变换平移性质,有 $DFT[f(x,y) * e^{-2πi(\frac{u_0x}{M}+\frac{v_0y}{N})}] = F(u+u_0,v+v_v0)$，且$DFT[1]= \delta(u,v)$，则有
 $$
-=DFT[\frac{1}{2}(e^{i2π(u_0x+v_0y)}+e^{-i2π(u_0x+v_0y)})]
-$$
-$$
-=\frac{1}{2}(DFT[(e^{i2π(u_0x+v_0y)}]+DFT[e^{-i2π(u_0x+v_0y)})])
-$$
-$$
-=\frac{1}{2}(DFT[1 * e^{2πi(\frac{u_0xM}{M}+\frac{v_0yN}{N})}]+DFT[1 * e^{-2πi(\frac{u_0xM}{M}+\frac{v_0yN}{N})})])
-$$
-$$
-=\frac{1}{2}(\delta(u-u_0M,v-v_0N)+\delta(u+u_0M,v+v_0N))
+\begin{aligned}
+原式=\frac{1}{2}[\delta(u-u_0M,v-v_0N)+\delta(u+u_0M,v+v_0N)]
+\end{aligned}
 $$
 
-## 1.2 Spatial Filtering
+## 1.2
 
+因为在使用较大范围零像素值对图像进行填充时，会使得图片边缘的出现一片像素值相同的区域，相当于在图像边缘平滑了图像，所以在对应的频谱图上低频分量的能量会增加，这样在傅里叶频谱图在水平和垂直轴方向高频对应的谱幅度会增强。
 
-
-### 1.2.1
-
-
-### 1.2.2
-反复使用给出滤波器的缺点为使图像变得模糊,无法辨识.
-
-### 1.2.3
-卷积与相关操作的不同为:卷积在滑动卷积操作之前需要将滤波器进行旋转180°再进行相关操作，而相关操作不需要旋转滤波器
-
-### 1.2.4
-1)该滤波器可以用于图像预处理任务中,可以在目标提取之前去除图像中一些琐碎细节
-2)该滤波器可以连接直线或者曲线之间的缝隙
-3)该滤波器可以降低噪声
-
-## 1.3 Spatial Filtering
-滤波器为：
-$$
- \frac{1}{9}
- \left[
-  \begin{matrix}
-  1 & 1 & 1\\
-  \\
-  1 & 1 & 1\\
-  \\
-  1 & 1 & 1
-  \end{matrix} 
- \right]
-$$
+## 1.3
 
 # 2 Programming Tasks
 原图如图1所示。
