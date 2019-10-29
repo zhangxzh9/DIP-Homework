@@ -16,7 +16,7 @@ def FFT2d(img,flag):
 
 def FFT(f):
     N = f.shape[1] 
-    if N <= 8:
+    if N <= 2:
         return np.array([DFT(f[i,:]) for i in range(f.shape[0])])
     else:
         F_even = FFT(f[:,::2])
