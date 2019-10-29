@@ -74,6 +74,8 @@ $$\hat{f}(x,y)=\frac{\sum_{(s,t)∈S_{xy}}g(s,t)^Qg(s,t)}{\sum_{(s,t)∈S_{xy}}g
 
 # 2 Programming Tasks
 
+## 2.1&2.2
+
 <div align=center>
 
 ![avatar](hw3.png)
@@ -81,7 +83,19 @@ $$\hat{f}(x,y)=\frac{\sum_{(s,t)∈S_{xy}}g(s,t)^Qg(s,t)}{\sum_{(s,t)∈S_{xy}}g
 
 </div>
 
- 
+## 2.3
+
+根据FFT算法可知，完成一个M*M矩阵FFT所需要的复数乘法次数$m(n)=\frac{1}{2}Mlog_2M$，复数加法次数为$a(n)=M\log_2M$，相对于直接做二次一维DFT加法和乘法的计算量为$M^2$有以下计算优势：
+$$
+c_m(n)=\frac{2M}{log_2M}
+$$
+$$
+c_a(n)=\frac{M}{log_2M}
+$$
+故所需计算时间减少。
+
+## 2.4
+
 实现空间滤波的可以大概分成以下4步：
 1、首先先180°翻转滤波器
 2、根据滤波器宽度选择以0填充图像背景。
