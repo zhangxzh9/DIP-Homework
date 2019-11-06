@@ -44,7 +44,7 @@ def equalize_hist(image):
     plt.title("cdf")
     plt.show()
 
-    #creat new picture by equalizing its hist (first time)
+    #creat new picture by equalizing its hist
     scaled_array_1 = np.zeros((src_height,src_width), np.uint8)
     for h in range(src_height):
         for w in range(src_width):
