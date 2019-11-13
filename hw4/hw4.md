@@ -46,7 +46,7 @@ $$
 其中$\theta$为
 $$
 \theta =arccos \lbrace
-    \frac{\frac{1}{2}[(R-G)+(R-B)]}{[(R-G)^2+(R-B(G-B)]^{\frac{1}{2}}}
+    \frac{\frac{1}{2}[(R-G)+(R-B)]}{[(R-G)^2+(R-B)(G-B)]^{\frac{1}{2}}}
 \rbrace
 $$
 
